@@ -1984,7 +1984,8 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 				'max_num_pages' => 0,
 			);
 		} else {
-			$query = new WP_Query( $args );
+			// $query = new WP_Query( $args );
+			$query = new jibres('get_products', $args);
 		}
 
 		if ( isset( $query_vars['return'] ) && 'objects' === $query_vars['return'] && ! empty( $query->posts ) ) {
